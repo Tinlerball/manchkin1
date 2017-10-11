@@ -5,7 +5,7 @@ package Cards;
  */
 public enum CardTypes {
     MOSTER,
-    STAFF,
+    STUFF,
     CURSE,
     SPECIAL;
 

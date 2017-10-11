@@ -1,16 +1,14 @@
 package Battle;
 
-import Cards.Card;
 import Cards.Monster;
 import Character.CharacterImp;
-
-import javax.print.DocFlavor;
 
 /**
  * Created by mikhailovra on 03.09.2017.
  */
 public class Battle {
     private CharacterImp character;
+    private CharacterImp helper;
     private Monster monster;
     private String winner = "";
 
@@ -32,9 +30,13 @@ public class Battle {
     }
 
     public void battle(){
-        if (this.monster.getAttack() >= this.character.getAttack())
+        if (helper != null) {
+
+        }
+        else { if (this.monster.getAttack() >= this.character.getAttack())
             setWinner("Monster");
         else setWinner("Character");
+        }
     }
     public static Battle.Builder newBuilder(){
         return new Battle().new Builder();
@@ -48,6 +50,14 @@ public class Battle {
         this.winner = winner;
     }
 
+    public CharacterImp getHelper() {
+        return helper;
+    }
+
+    public void setHelper(CharacterImp helper) {
+        this.helper = helper;
+    }
+
     public class Builder{
         public Builder setCharacter(CharacterImp character){
             Battle.this.setCharacter(character);
@@ -55,6 +65,11 @@ public class Battle {
         }
 
         public Builder setMonster(Monster mosnter){
+            Battle.this.setMonster(mosnter);
+            return this;
+        }
+
+        public Builder setHelper(Monster mosnter){
             Battle.this.setMonster(mosnter);
             return this;
         }

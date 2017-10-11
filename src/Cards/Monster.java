@@ -1,7 +1,5 @@
 package Cards;
 
-import java.math.BigDecimal;
-import java.rmi.MarshalledObject;
 
 /**
  * Created by mikhailovra on 03.09.2017.
@@ -36,7 +34,14 @@ public class Monster implements Card {
 
     @Override
     public String toString(){
-        return "ID = " + ID + ", " + "level = " + level + ", " + "Description = " + description + ", " + " Type = " + type + ", " + "Attack = " +  attack + ", " + "Name = " + name + ", " + "Lasciviousness = " + lasciviousness + ", " + "Special = " + special;
+        return "ID = " + ID + ", "
+                + "level = " + level + ", "
+                + "Description = " + description + ", "
+                + " Type = " + type + ", "
+                + "Attack = " +  attack + ", "
+                + "Name = " + name + ", "
+                + "Lasciviousness = " + lasciviousness + ", "
+                + "Special = " + special;
     }
 
     public int getID() {
@@ -112,7 +117,7 @@ public class Monster implements Card {
             Monster.this.setID(ID);
             return this;
         }
-        public Builder setAttack(int atack){
+        public Builder setAttack(int attack){
             Monster.this.setAttack(attack);
             return this;
         }
